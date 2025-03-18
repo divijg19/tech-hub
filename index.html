@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Hub - Your Knowledge Portal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Tech Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" id="login-btn" class="auth-btn">Login</a></li>
+                    <li><a href="#" id="signup-btn" class="auth-btn">Sign Up</a></li>
+                    <li><a href="#" id="logout-btn" class="auth-btn hidden">Logout</a></li>
+                    <li><span id="user-greeting" class="hidden">Welcome, <span id="username-display"></span>!</span></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Tech Hub</h2>
+            <p>Your one-stop destination for tech resources, tutorials, and community.</p>
+            <div class="cta-buttons">
+                <a href="resources.html" class="btn primary">Explore Resources</a>
+                <a href="blog.html" class="btn secondary">Read Our Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="features">
+            <div class="container">
+                <h2>What We Offer</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Curated Resources</h3>
+                        <p>Access our handpicked collection of learning materials.</p>
+                        <ul>
+                            <li>Programming tutorials</li>
+                            <li>Documentation guides</li>
+                            <li>Best practices</li>
+                            <li>Tool recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Community Blog</h3>
+                        <p>Stay informed with the latest tech trends and insights.</p>
+                        <ul>
+                            <li>Industry news</li>
+                            <li>Tutorial articles</li>
+                            <li>Project showcases</li>
+                            <li>Expert interviews</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Member Benefits</h3>
+                        <p>Create an account to unlock additional features.</p>
+                        <ul>
+                            <li>Bookmark favorite resources</li>
+                            <li>Access exclusive content</li>
+                            <li>Participate in discussions</li>
+                            <li>Personalized recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-posts">
+            <div class="container">
+                <h2>Recent Blog Posts</h2>
+                <div class="post-grid">
+                    <!-- Posts will be dynamically loaded here -->
+                    <div class="post-card skeleton"></div>
+                    <div class="post-card skeleton"></div>
+                    <div class="post-card skeleton"></div>
+                </div>
+                <div class="center-button">
+                    <a href="blog.html" class="btn primary">View All Posts</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tech Hub</h3>
+                    <p>Your knowledge portal for all things tech.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <ul class="social-links">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Tech Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="login-form" class="auth-form">
+                <h2>Login</h2>
+                <form id="login-form-element">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn primary">Login</button>
+                    </div>
+                    <p class="form-switch">Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+                </form>
+            </div>
+            <div id="signup-form" class="auth-form hidden">
+                <h2>Sign Up</h2>
+                <form id="signup-form-element">
+                    <div class="form-group">
+                        <label for="signup-name">Name</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required minlength="8">
+                        <p class="form-hint">Password must be at least 8 characters</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn primary">Sign Up</button>
+                    </div>
+                    <p class="form-switch">Already have an account? <a href="#" id="show-login">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
